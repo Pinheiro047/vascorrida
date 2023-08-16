@@ -16,3 +16,12 @@ class obj{
         des.drawImage(img,this.x,this.y,this.w,this.h)
 }
     }
+
+    class Bg extends Obj{
+        move(vel,limit,pos){
+            this.y +=vel
+            if(this.y>limit){
+                this.y = pos
+            }
+        }
+    }
