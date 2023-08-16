@@ -16,16 +16,17 @@ let jogar = true
 
 
 function atualiza(){
-     vasco.move(3,700,0)
-     serie_b.move(3,0,-700)
-    serie_c.move(3,0,-300)
-     if(jogar){
-     vasco.move()
-     serie_c.move()
-     serie_b.move()
-     colisao()
-     game_over()
-     nova_fase()
-     vencer_jogo()
-     }
- }
+    campo.move(3,700,0)
+    campo_2.move(3,0,-700)
+    if(jogar){
+        vasco.move()
+        serie_b.move()
+        serie_c.move()
+        colisao()
+        game_over()
+        vencer()
+     //   nova_fase() //
+
+    }
+
+}
