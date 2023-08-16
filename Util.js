@@ -17,7 +17,7 @@ class obj{
 }
     }
 
-    class Bg extends Obj{
+    class Campo extends Obj{
         move(vel,limit,pos){
             this.y +=vel
             if(this.y>limit){
