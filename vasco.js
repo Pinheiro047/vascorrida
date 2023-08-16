@@ -1,10 +1,10 @@
 let des = document.getElementById('des').getContext('2d')
 
-let campo = new Bg(0,0,500,700, 'assets/')
-let campo_2 = new Bg(0,-700,500,700, 'assets/')
-let vasco = new Vasco(0,0,50,50, 'assets/')
-let serie_b= new SerieB(200,500,100,100,'assets/')
-let serie_c = new Serie_C(100,100,100,100,'assets/')
+let campo = new Bg(0,0,500,700, 'assets/gramado.jpg')
+let campo_2 = new Bg(0,-700,500,700, 'assets/gramado2.jpg')
+let vasco = new Vasco(0,0,50,50, 'assets/gigante_vasco.png')
+let serie_b= new SerieB(200,500,100,100,'assets/serieb.png')
+let serie_c = new Serie_C(100,100,100,100,'assets/seric.png')
 
 
 let texto_pontos = new Texto()
