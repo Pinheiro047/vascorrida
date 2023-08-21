@@ -15,6 +15,34 @@ let texto_game_over = new Texto()
 let jogar = true
 
 
+document.addEventListener('keydown', (event)=>{
+    if(event.key === 'a'){
+        // console.log('pressionado a tecla "a" ')
+        vasco.dir = - 5
+    }else if(event.key === 'd'){
+        // console.log('pressionado a tecla "d" ')
+        vasco.dir = 5
+    }else if(event.key === 's'){
+        console.log('pressionado a tecla "s" ')
+    }else if(event.key === 'w'){
+        console.log('pressionado a tecla "w" ')
+    }
+})
+document.addEventListener('keyup', (event)=>{
+    if(event.key === 'a'){
+        // console.log('soltou a tecla "a" ')
+        vasco.dir = 0
+    }else if(event.key === 'd'){
+        // console.log('soltou a tecla "d" ')
+        vasco.dir = 0
+    }else if(event.key === 's'){
+        console.log('soltou a tecla "s" ')
+    }else if(event.key === 'w'){
+        console.log('soltou a tecla "w" ')
+    }
+})
+
+
 function atualiza(){
     campo.move(3,700,0)
     campo_2.move(3,0,-700)
