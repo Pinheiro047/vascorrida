@@ -81,6 +81,9 @@ class Tres extends Serie_c{
     }
 }
 
+
+
+
 class Texto{
     des_texto(text,x,y,cor,font){
         des.font = font
