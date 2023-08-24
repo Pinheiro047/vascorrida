@@ -42,9 +42,26 @@ class Vasco extends Obj{
 }
 
 class Serie_c extends Obj{
-
-    move(){
-        this.y += 2
+    
+    move(vel){
+        this.y += vel
+        
+        if(this.y >= 750){
+            this.y = -50
+            this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
+        }
+    }
+    
+    recomeca(){
+        this.y = -200
+        this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
+    }
+}
+class Serie_c2 extends Obj{
+    
+    move(vel){
+        this.y += vel
+        
         if(this.y >= 750){
             this.y = -50
             this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
@@ -75,6 +92,30 @@ class Bg2 extends Obj{
 }
 
 class Tres extends Serie_c{
+    move(vel){
+        this.y += vel
+        
+        if(this.y >= 750){
+            this.y = -50
+            this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
+        }
+    }
+
+    recomeca(){
+        this.y = -100
+        this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
+    }
+}
+class Tres2 extends Serie_c{
+    move(vel){
+        this.y += vel
+        
+        if(this.y >= 750){
+            this.y = -50
+            this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
+        }
+    }
+
     recomeca(){
         this.y = -100
         this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
