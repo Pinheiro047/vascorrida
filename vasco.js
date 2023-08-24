@@ -57,6 +57,7 @@ tres.recomeca()
 function desenha(){
  bg.desenha_obj()
  bg2.desenha_obj()
+ 
 if(jogar){ 
  vasco.desenha_obj()
  serie_c.desenha_obj()
