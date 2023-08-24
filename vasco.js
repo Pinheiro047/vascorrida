@@ -99,7 +99,7 @@ function desenha(){
     }else{
     texto_game_over.des_texto('GAME OVER',148,350, 'red','50px Times')
     }
-   }
+   }        
 
 function atualiza(){
     bg.move(3,700,0)

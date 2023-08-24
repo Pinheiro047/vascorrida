@@ -26,6 +26,11 @@ class Vasco extends Obj{
 
     move(){
         this.x += this.dir
+        if(this.x <= 12){
+            this.x = 10
+        }else if(this.x >= 490){
+            this.x = 490
+        }
     }
 
     colid(objeto){
