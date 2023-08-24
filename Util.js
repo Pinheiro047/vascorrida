@@ -50,7 +50,7 @@ class Serie_c extends Obj{
             this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
         }
     }
-    
+
     recomeca(){
         this.y = -200
         this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
@@ -80,9 +80,6 @@ class Tres extends Serie_c{
         this.x = Math.random() * (400 - 0) // a aranha tem 100 px de largura
     }
 }
-
-
-
 
 class Texto{
     des_texto(text,x,y,cor,font){
