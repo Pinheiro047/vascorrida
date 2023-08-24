@@ -15,6 +15,29 @@ let val_vidas = new Texto()
 let texto_game_over = new Texto()
 let jogar = true
 
+//definição d instancia de som
+const som1 = new Audio('assets/b_pra_a.mp3')
+som1.volume = 1.0
+
+
+const som2 = new Audio('assets/a_pra_b.mp3')
+som2.volume = 1.0
+
+const som3 = new Audio('assets/colisao_seriec.mp3')
+som3.volume = 1.0
+
+const som4 = new Audio('assets/ganharjogo.mp3')
+som4.volume = 1.0
+
+const som5 = new Audio('assets/perderjogo2.mp3')
+som5.volume = 1.0
+
+const som6 = new Audio('assets/colisao3pts.mp3')
+som6.volume = 1.0
+
+const som7 = new Audio('assets/colisao3pts.mp3')
+som7.volume = 0.0
+
 // let spider2 = new Obj(0,0,100,100,'darkorchid')
 
 document.addEventListener('keydown', (event)=>{
@@ -25,7 +48,7 @@ document.addEventListener('keydown', (event)=>{
         // console.log('pressionado a tecla "d" ')
         vasco.dir = 5
     }
-    
+    som7.play()
 })
 document.addEventListener('keyup', (event)=>{
     if(event.key === 'a'){
@@ -35,20 +58,24 @@ document.addEventListener('keyup', (event)=>{
         // console.log('soltou a tecla "d" ')
         vasco.dir = 0
     }
+    som7.play()
 })
 
 function game_over(){
     if(vasco.vidas <= 0){
+        som5.play()
         jogar = false
     }
 }
 
 function colisao(){
     if(vasco.colid(serie_c)){
+        som3.play()
         serie_c.recomeca()
         vasco.vidas -=1
     }
     if(vasco.colid(tres)){
+        som6.play()
         tres.recomeca()
         vasco.pts +=3
     }
