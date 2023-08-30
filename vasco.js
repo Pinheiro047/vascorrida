@@ -18,6 +18,7 @@ let val_vidas = new Texto()
 
 let texto_game_over = new Texto()
 let jogar = 1
+let texto_you_win = new Texto()
 
 // let spider2 = new Obj(0,0,100,100,'darkorchid')
 
@@ -75,6 +76,13 @@ function game_over(){
     }
 }
 
+function you_win(){
+    if(vasco.pts >= 90 ){
+        som6.play()
+        jogar = 5
+    }
+}
+
 function colisao(){
     if(vasco.colid(serie_d)){
         som3.play()
@@ -115,10 +123,10 @@ function colisao(){
         tres2.recomeca()
         vasco.pts +=3
     }
-    if(vasco.pts>=15){
+    if(vasco.pts>=21){
         jogar = 2
     }
-    if(vasco.pts>=30){
+    if(vasco.pts>=45){
         jogar = 3
     }
 }
@@ -137,7 +145,7 @@ function desenha(){
         topo_serie.des_texto('Série C ',250,100, 'white','30px Times')
         val_pts.des_texto(vasco.pts,500,50, 'white','30px Times')
         val_vidas.des_texto(vasco.vidas,125,50, 'white','30px Times')
-        }else if(jogar==2){
+        } if(jogar==2){
             vasco.desenha_obj()
             serie_c.desenha_obj()
             serie_c2.desenha_obj()
@@ -149,7 +157,7 @@ function desenha(){
             val_pts.des_texto(vasco.pts,500,50, 'white','30px Times')
             val_vidas.des_texto(vasco.vidas,125,50, 'white','30px Times')
     }
-    else if(jogar==3){
+     if(jogar==3){
         vasco.desenha_obj()
         serie_b.desenha_obj()
         serie_b2.desenha_obj()
@@ -161,9 +169,12 @@ function desenha(){
         val_pts.des_texto(vasco.pts,500,50, 'white','30px Times')
         val_vidas.des_texto(vasco.vidas,125,50, 'white','30px Times')
     }
-        else{
-            texto_game_over.des_texto('GAME OVER',148,350, 'white','50px Times')
-    }
+    if(jogar==4){
+            texto_game_over.des_texto('GAME OVER',148,350, 'white','50px Times') 
+        }
+    if(jogar==5){
+            texto_you_win.des_texto('O VASCO É GIGANTE!',60,350, 'white','50px Times')
+        }
 }     
 
 function atualiza(){
@@ -171,28 +182,29 @@ function atualiza(){
     bg2.move(3,0,-700)
     if(jogar==1){
         vasco.move()
-        serie_d.move(4)
-        serie_d2.move(4)
-        tres.move(4)
-        tres2.move(4)
+        serie_d.move(2)
+        serie_d2.move(2)
+        tres.move(2)
+        tres2.move(2)
         colisao()
         game_over()
     }else if(jogar==2){
         vasco.move()
-        serie_c.move(6)
-        serie_c2.move(6)
-        tres.move(6)
-        tres2.move(6)
+        serie_c.move(3.5)
+        serie_c2.move(3.5)
+        tres.move(3.5)
+        tres2.move(3.5)
         colisao()
         game_over()
     }else if(jogar==3){
         vasco.move()
-        serie_b.move(8)
-        serie_b2.move(8)
-        tres.move(8)
-        tres2.move(8)
+        serie_b.move(6)
+        serie_b2.move(6)
+        tres.move(6)
+        tres2.move(6)
         colisao()
         game_over()
+        you_win()
     }
     
 }
