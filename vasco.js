@@ -6,6 +6,10 @@ let tres2 = new Tres(300,300,50,50, 'assets/trespTS.png')
 let vasco = new Vasco(200,500,100,100,'assets/brasao_vasco.png')
 let serie_c = new Serie_c(500,100,100,100,'assets/seriec.png')
 let serie_c2 = new Serie_c(100,200,100,100,'assets/seriec.png')
+let serie_d = new Serie_d(500,100,100,100,'assets/seried.png')
+let serie_d2= new Serie_d(100,200,100,100,'assets/seried.png')
+let serie_b = new Serie_b(500,100,100,100,'assets/serieb.png')
+let serie_b2= new Serie_b(100,200,100,100,'assets/serieb.png')
 let topo_serie = new Texto()
 let texto_pontos = new Texto()  
 let texto_vidas = new Texto()
@@ -72,13 +76,34 @@ function game_over(){
 }
 
 function colisao(){
+    if(vasco.colid(serie_d)){
+        som3.play()
+        serie_d.recomeca()
+        vasco.vidas -=1
+    }
     if(vasco.colid(serie_c)){
         som3.play()
         serie_c.recomeca()
         vasco.vidas -=1
     }
     if(vasco.colid(serie_c2)){
+        som3.play()
         serie_c2.recomeca()
+        vasco.vidas -=1
+    }
+    if(vasco.colid(serie_b)){
+        som3.play()
+        serie_b.recomeca()
+        vasco.vidas -=1
+    }
+    if(vasco.colid(serie_b2)){
+        som3.play()
+        serie_b2.recomeca()
+        vasco.vidas -=1
+    }
+    if(vasco.colid(serie_d2)){
+       som3.play()
+        serie_d2.recomeca()
         vasco.vidas -=1
     }
     if(vasco.colid(tres)){
@@ -103,8 +128,8 @@ function desenha(){
     bg2.desenha_obj()
     if(jogar==1){        
         vasco.desenha_obj()
-        serie_c.desenha_obj()
-        serie_c2.desenha_obj()
+        serie_d.desenha_obj()
+        serie_d2.desenha_obj()
         tres.desenha_obj()
         tres2.desenha_obj()
         texto_pontos.des_texto('Pontos: ',400,50, 'orange','30px Times')
@@ -126,8 +151,8 @@ function desenha(){
     }
     else if(jogar==3){
         vasco.desenha_obj()
-        serie_c.desenha_obj()
-        serie_c2.desenha_obj()
+        serie_b.desenha_obj()
+        serie_b2.desenha_obj()
         tres.desenha_obj()
         tres2.desenha_obj()
         texto_pontos.des_texto('Pontos: ',400,50, 'orange','30px Times')
@@ -137,7 +162,7 @@ function desenha(){
         val_vidas.des_texto(vasco.vidas,125,50, 'white','30px Times')
     }
         else{
-            texto_game_over.des_texto('GAME OVER',148,350, 'red','50px Times')
+            texto_game_over.des_texto('GAME OVER',148,350, 'white','50px Times')
     }
 }     
 
@@ -146,8 +171,8 @@ function atualiza(){
     bg2.move(3,0,-700)
     if(jogar==1){
         vasco.move()
-        serie_c.move(4)
-        serie_c2.move(4)
+        serie_d.move(4)
+        serie_d2.move(4)
         tres.move(4)
         tres2.move(4)
         colisao()
@@ -162,8 +187,8 @@ function atualiza(){
         game_over()
     }else if(jogar==3){
         vasco.move()
-        serie_c.move(8)
-        serie_c2.move(8)
+        serie_b.move(8)
+        serie_b2.move(8)
         tres.move(8)
         tres2.move(8)
         colisao()
